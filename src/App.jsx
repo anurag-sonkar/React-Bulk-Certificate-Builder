@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./App.module.css";
 import Header from "./Components/Header/Header";
 import Hero from "./Components/Hero/Hero";
+import About from "./Components/About/About";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
       <div className={styles.Container}>
         <Header />
         <Hero />
+        <About />
       </div>
     </div>
   );

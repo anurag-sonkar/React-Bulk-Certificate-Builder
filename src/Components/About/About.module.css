@@ -1,0 +1,166 @@
+.aboutContainer{
+  background: rgb(0,6,17);
+background: linear-gradient(90deg, rgba(0,6,17,1) 0%, rgba(4,21,45,0.9557948179271709) 100%);
+border-radius: 20px;
+color: #fff;
+
+width: 100%;
+min-height: 100vh;
+padding: 2.5rem 4.2rem;
+
+}
+
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header a{
+  text-decoration: none;
+  display: block;
+  font-size: 3rem;
+  font-weight: 800;
+  color: #fff;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.header a:hover{
+  background-color: rgb(0, 0, 0);
+  scale: 1.2;
+}
+
+.heading{
+  font-size: 2.5rem;
+  font-family: "roboto";
+  text-transform: uppercase;
+  font-weight: 500;
+
+}
+
+.leftContainer{
+  min-width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.leftContainer img{
+  width: 28vmax;
+  /* background-color: #fff; */
+  transition: all 0.3s ease-in-out;
+}
+
+.leftContainer img:hover{
+  scale: 1.2;
+  cursor: pointer;
+}
+
+.container{
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.rightContainer{
+  min-width: 50%;
+
+}
+
+
+.cardContainer{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 20px;
+  
+  width: 100%;
+  min-height: 20vh;
+    padding: 2rem 0.6rem;
+  margin: 1rem 0;
+  border-radius: 20px;
+  cursor: pointer;
+  
+  }
+
+  .cardContainer:hover{
+    background-image: linear-gradient(
+    90deg,
+    rgba(165, 215, 232, 0.42) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+
+  }
+  
+  .leftDiv{
+    min-width: 70px;
+  }
+  
+  .leftDiv img{
+    width: 70px;
+  
+  }
+
+  .rightDiv{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .rightDiv .title{
+    font-size: 2rem;
+    font-weight: 500;
+    font-family: "roboto";
+  }
+  
+  .rightDiv .content{
+    font-size: 1.5rem;
+    font-weight: 500;
+    font-family: "roboto";
+  }
+
+
+  
+
+ 
+  @media (max-width : 840px) {
+.leftContainer{
+  display: none;
+}
+.aboutContainer{
+  width: 100%;
+  padding: 2rem;
+}
+    
+  }
+
+
+  @media (max-width : 575px) {
+    .rightDiv .title{
+      font-size: 2rem;
+      font-weight: 500;
+      font-family: "roboto";
+    } 
+
+    .rightDiv .content{
+      width: 100%;
+      font-size: 1.2rem;
+    }
+
+
+    .cardContainer:hover{
+      background-image: linear-gradient(
+      90deg,
+      rgba(165, 215, 232, 0.42) 0%,
+      rgba(255, 255, 255, 0) 100%
+    )
+  }
+  }
