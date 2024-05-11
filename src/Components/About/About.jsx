@@ -13,10 +13,13 @@ function About() {
 
   const fetchUserImage = async () => {
     try {
-      const imageRef = ref(storage, "AboutImages/leftDiv/cartoon.png");
+      const imageRef = ref(
+        storage,
+        "rootImages/AboutImages/LeftDiv/cartoon.png"
+      );
       const url = await getDownloadURL(imageRef);
       setLeftDivImageUrl(url);
-      console.log("LEFT", leftDivImageUrl);
+      // console.log("LEFT", leftDivImageUrl);
     } catch (error) {
       console.log(error);
     }
@@ -24,7 +27,7 @@ function About() {
 
   async function fetchAllImages() {
     try {
-      const imagesRefs = ref(storage, "AboutImages/rightDiv");
+      const imagesRefs = ref(storage, "rootImages/AboutImages/RightDiv");
       const imageList = await listAll(imagesRefs);
 
       const allUrls = imageList.items.map(async (imageRef) => {
@@ -44,7 +47,6 @@ function About() {
     fetchAllImages();
   }, []);
 
-  console.log(rightDivImagesUrls);
   return (
     <div className={styles.aboutContainer} id="about">
       <div className={styles.header}>

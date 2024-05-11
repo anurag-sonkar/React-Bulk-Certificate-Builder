@@ -1,0 +1,130 @@
+.selectCertificateContainer {
+  border-radius: 20px;
+  color: #fff;
+  width: 100%;
+  padding: 1.8rem 2rem;
+  background: rgb(0, 6, 17);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 6, 17, 1) 0%,
+    rgba(4, 21, 45, 0.9557948179271709) 100%
+  );
+  margin-top: 2rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.heading {
+  font-size: 2.5rem;
+  font-family: "roboto";
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.link a {
+  text-decoration: none;
+  display: block;
+  font-size: 3rem;
+  font-weight: 800;
+  color: #fff;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.link a:hover {
+  background-color: rgb(0, 0, 0);
+  scale: 1.2;
+}
+
+.displayCertificatesContainer {
+  width: 100%;
+  padding: 4rem 0;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.preview {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.preview div {
+  font-size: 1.5rem;
+  font-family: "roboto";
+  font-weight: 500;
+}
+
+.preview img {
+  border: 4px solid rgb(7, 123, 143);
+  width: 10vmax;
+  height: auto;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.hide {
+  display: none;
+}
+
+.carousal {
+  display: flex;
+}
+
+.carousal div:nth-child(1),
+.carousal div:nth-child(3) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.certificate img {
+  width: 55vmax;
+  height: auto;
+  border: 1px solid #000;
+  cursor: pointer;
+}
+
+@media (max-width: 1000px) {
+  .selectCertificateContainer {
+    padding: 1rem; /* Adjust padding for smaller screens */
+  }
+
+  .displayCertificatesContainer{
+    padding: 3rem 0;
+  }
+
+  .preview {
+    position: relative; /* Change position back to relative */
+    margin: 2rem 0; /* Add margin for separation */
+  }
+
+  .carousal {
+    
+    align-items: center; /* Center items vertically */
+  }
+
+  .certificate img {
+    max-width: 100%; /* Ensure images don't overflow */
+    width: 90vw; /* Adjust width for smaller screens */
+  }
+
+  .heading{
+    font-size: 1.6rem;
+  }
+}

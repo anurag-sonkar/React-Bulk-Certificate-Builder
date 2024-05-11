@@ -48,3 +48,12 @@ width: 100%;
   padding: 1rem 3rem;
    
 }
+
+@media (max-width : 575px) {
+  .App{
+    padding: 2rem 1rem;
+  }
+  .Container{
+    padding: 1rem 0rem;
+  }
+}

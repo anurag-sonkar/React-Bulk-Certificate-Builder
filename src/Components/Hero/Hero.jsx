@@ -10,7 +10,7 @@ function Hero() {
   const [loading, setLoading] = useState(true);
   const fetchUserImage = async () => {
     try {
-      const imageRef = ref(storage, "UserImage/user.png");
+      const imageRef = ref(storage, "rootImages/UserImages/user.png");
       const url = await getDownloadURL(imageRef);
       setUserImageUrl(url);
       setLoading(false);
