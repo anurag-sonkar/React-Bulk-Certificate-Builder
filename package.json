@@ -18,6 +18,8 @@
     "@mui/styled-engine-sc": "^6.0.0-alpha.18",
     "bootstrap": "^5.3.3",
     "firebase": "^10.11.1",
+    "html2canvas": "^1.4.1",
+    "jspdf": "^2.5.1",
     "react-bootstrap": "^2.10.2",
     "react-dom": "^18.2.0",
     "react-icons": "^5.2.1",

@@ -14,7 +14,7 @@ function ViewExcelTable() {
     setExcelData(filteredData);
   };
   return (
-    <div className={styles.viewExcelTableContainer}>
+    <div className={styles.viewExcelTableContainer} id="view_imports">
       <div className={styles.header}>
         <div className={styles.heading}>view Excel</div>
         <div className={styles.link}>

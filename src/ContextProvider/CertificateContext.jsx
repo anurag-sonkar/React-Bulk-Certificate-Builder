@@ -89,6 +89,7 @@ const CertificateContextProvider = (props) => {
         displayCertificates,
         selectedCertificate,
         setSelectedCertificate,
+        certificateToBeEdit,
       }}
     >
       {props.children}

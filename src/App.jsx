@@ -9,6 +9,7 @@ import CertificateContextProvider from "./ContextProvider/CertificateContext";
 import UploadExcel from "./Components/UploadExcel/UploadExcel";
 import ExcelContextProvider from "./ContextProvider/ExcelFileContext";
 import ViewExcelTable from "./Components/ViewExcelTable/ViewExcelTable";
+import Download from "./Components/Download/Download";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
             <ExcelContextProvider>
               <UploadExcel />
               <ViewExcelTable />
+              <Download />
             </ExcelContextProvider>
           </CertificateContextProvider>
         </div>
