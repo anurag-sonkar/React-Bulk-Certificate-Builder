@@ -75,3 +75,60 @@
   background: rgb(128,201,235);
 background: linear-gradient(90deg, rgba(128,201,235,1) 0%, rgba(171,253,255,1) 28%, rgba(255,255,242,1) 72%);
 }
+
+/****/
+.certificate {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.certificateWrapper {
+  position: relative;
+  margin: 10px;
+}
+
+
+
+.certificateWrapper img{
+  width: 400px;
+  height: auto;
+
+  
+
+}
+
+.overlay:hover{
+  cursor: pointer;
+  background-color: #00000048;
+  transition: all 0.2s ease-in-out;
+}
+
+.noCertificateDiv{
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.noCertificateDiv p{
+  font-size: 4rem;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: 600;
+  color: gray;
+  padding: 2rem ;
+}
+.certificate{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width : 600px) {
+  .noCertificateDiv{
+    width: 200vw;
+  }
+  .noCertificateDiv p{
+    font-size: 2.3rem;
+  }
+  
+}

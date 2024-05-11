@@ -5,14 +5,21 @@ import html2canvas from "html2canvas";
 import { HashLink as Link } from "react-router-hash-link";
 import { MdArrowUpward } from "react-icons/md";
 import pdfImg from "../../assets/folder.png";
+import { useCertificate } from "../../ContextProvider/CertificateContext";
+import { useExcelFile } from "../../ContextProvider/ExcelFileContext";
 function Download() {
+  const { certificateToBeEdit, overlayCSS } = useCertificate();
+  const { excelData, setExcelData } = useExcelFile();
+
   // generate pdf
   const generatePDF = async () => {
     // const pdf = new jsPDF("landscape");
     const pdf = new jsPDF("landscape", "px", "a4"); // Adjust page size and format
 
     // Select all certificate containers
-    const certificates = document.querySelectorAll(".certificateWrapper");
+    const certificates = document.querySelectorAll(
+      `.${styles.certificateWrapper}`
+    );
 
     // Iterate through each certificate container
     for (let i = 0; i < certificates.length; i++) {
@@ -42,12 +49,13 @@ function Download() {
 
     // Save the PDF
     pdf.save("certificates.pdf");
-    notify("All Pdf Downloded Successfully.");
   };
 
   const downloadSingleCertificate = async (index) => {
     const pdf = new jsPDF("landscape", "px", "a4"); // Adjust page size and format
-    const certificates = document.querySelectorAll(".certificateWrapper");
+    const certificates = document.querySelectorAll(
+      `.${styles.certificateWrapper}`
+    );
 
     if (index >= 0 && index < certificates.length) {
       const certificate = certificates[index];
@@ -76,7 +84,7 @@ function Download() {
       <div className={styles.header}>
         <div className={styles.heading}>download certificate</div>
         <div className={styles.downloadDiv}>
-          <button>
+          <button onClick={generatePDF}>
             Download <img src={pdfImg} />
           </button>
         </div>
@@ -89,7 +97,42 @@ function Download() {
           <MdArrowUpward />
         </Link>
       </div>
-      <div className={styles.container}></div>
+      <div className={styles.container}>
+        {excelData ? (
+          <div className={styles.certificate}>
+            {excelData.map((ele, index) => (
+              <div
+                className={styles.certificateWrapper}
+                key={index}
+                onClick={() => downloadSingleCertificate(index)}
+              >
+                <img src={certificateToBeEdit} alt="Certificate" />
+                <div className={styles.overlay} style={overlayCSS[0]}>
+                  <span style={overlayCSS[1]}>
+                    {ele.Firstname} <span> </span> {ele.Lastname}
+                  </span>
+                  <div style={overlayCSS[2]}>
+                    {/* Use a ternary operator to check if the text field is present */}
+                    {ele.text
+                      ? ele.text
+                      : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla volutpat a erat molestie ornare. Vestibulum tempus tortor quis mi lobortis congue vel nec libero. Morbi risus est, scelerisque id viverra ut, porttitor vitae lorem."}
+                  </div>
+                  {overlayCSS[3].sign && (
+                    <span style={overlayCSS[3]}>{ele.Hod}</span>
+                  )}
+                  {overlayCSS[4].sign && (
+                    <span style={overlayCSS[4]}>{ele.Supervisior}</span>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div className={styles.noCertificateDiv}>
+            <p>No Certificate to Download</p>
+          </div>
+        )}
+      </div>
     </div>
   );
 }
