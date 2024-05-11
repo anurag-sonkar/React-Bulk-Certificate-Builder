@@ -1,0 +1,95 @@
+.viewExcelTableContainer {
+  color: #fff;
+  width: 100%;
+  margin-top: 2rem;
+  min-height: 100vh;
+  overflow-x: auto; 
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0.5rem;
+}
+
+.heading {
+  font-size: 2.8rem;
+  font-family: "roboto";
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.link a {
+  text-decoration: none;
+  display: block;
+  font-size: 3rem;
+  font-weight: 800;
+  color: #fff;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.link a:hover {
+  background-color: rgb(0, 0, 0);
+  scale: 1.2;
+}
+
+table {
+  width: 100%;
+  text-align: center;
+  border: 1px solid #fff;
+}
+table thead th{
+  border: 1px solid #fff;
+
+}
+table td,th,tr{
+  border: 1px solid #fff;
+  padding: 0.5rem 0.8rem;
+
+}
+
+.noDataDiv{
+  width: 100%;
+  min-height: 80vh;
+  /* border: 2px dashed #fff; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.noDataDiv div{
+  font-size: 5vmax;
+  font-weight: 500;
+  font-family: "roboto";
+  border: 2px dashed #fff;
+  padding: 2rem 4rem;
+
+}
+
+@media (max-width : 600px) {
+.viewExcelTableContainer {
+  min-height: 50vh;
+}
+
+.noDataDiv{
+  min-height: 50vh;
+
+}
+  .noDataDiv div{
+
+    font-size: 2vmax;
+  }
+
+table{
+}
+
+table td,th,tr{
+  padding: 0px 5px;
+}
+}

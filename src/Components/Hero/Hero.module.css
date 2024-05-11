@@ -19,6 +19,7 @@
 font-size: 3rem;
 font-family: "roboto";
 font-weight: 500;
+line-height: 3.2rem;
 }
 
 .leftContainer .content{
@@ -84,6 +85,7 @@ font-weight: 500;
   
   .leftContainer .name{
     text-align: center;
+   
     }
 
   .btn{
@@ -101,7 +103,10 @@ font-weight: 500;
 
 
 @media (max-width : 575px) {
+
   .leftContainer .name{
-    font-size: 4rem;
+    font-size: 2.8rem;
+    text-align: center;
+    
     }
 }
