@@ -14,6 +14,9 @@
   /* min-height: 100vh; */
 }
 
+::selection{
+}
+
 .header{
   color: #fff;
  display: flex; 
@@ -117,6 +120,7 @@ background: linear-gradient(90deg, rgba(128,201,235,1) 0%, rgba(171,253,255,1) 2
   font-weight: 600;
   color: gray;
   padding: 2rem ;
+  border: 2px dashed #fff;
 }
 .certificate{
   display: flex;
@@ -127,6 +131,12 @@ background: linear-gradient(90deg, rgba(128,201,235,1) 0%, rgba(171,253,255,1) 2
   margin-top: 2rem;
   max-height:100vh ;
   overflow: auto;
+}
+
+.loader{
+  color: #fff;
+  display: table;
+  margin: auto;
 }
 @media (max-width : 840px) {
   .noCertificateDiv{
@@ -156,7 +166,7 @@ background: linear-gradient(90deg, rgba(128,201,235,1) 0%, rgba(171,253,255,1) 2
   }
   .certificateWrapper{
     /* overflow: auto; */
-    scale: 0.9;
+    /* scale: 0.9; */
   }
 .certificateWrapper img{
   /* width: 20rem; */

@@ -10,22 +10,31 @@ import UploadExcel from "./Components/UploadExcel/UploadExcel";
 import ExcelContextProvider from "./ContextProvider/ExcelFileContext";
 import ViewExcelTable from "./Components/ViewExcelTable/ViewExcelTable";
 import Download from "./Components/Download/Download";
+import { useTheme } from "./ContextProvider/ThemeContext";
 
 function App() {
+  const { themePlate, themeSelector, setThemeSelector } = useTheme();
+  // console.log("THEME : ", obj);
   return (
     <>
       <div
         className={styles.App}
         style={{
-          background: "rgb(7,25,51)",
-          backgroundImage:
-            "linear-gradient(90deg, rgba(7,25,51,1) 0%, rgba(18,42,84,1) 24%, rgba(4,21,45,1) 100%)",
+          ...themeSelector,
         }}
+        id="home"
       >
         <div className={styles.themeContainer}>
           <div className={styles.selectTheme}>
-            <div></div>
-            <div></div>
+            {themePlate.map((ele, index) => (
+              <div
+                key={index}
+                onClick={() => {
+                  setThemeSelector(themePlate[index]);
+                }}
+                style={{ ...ele }}
+              ></div>
+            ))}
           </div>
         </div>
         <div className={styles.Container}>

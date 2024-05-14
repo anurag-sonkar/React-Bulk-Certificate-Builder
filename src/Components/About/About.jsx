@@ -80,8 +80,7 @@ function About() {
             <div className={styles.rightDiv}>
               <div className={styles.title}>Select Certificate</div>
               <div className={styles.content}>
-                I'm a frontend developer with experience in building responsive
-                and optimized sites
+                Choose from a variety of certificate designs and styles
               </div>
             </div>
           </div>
@@ -96,8 +95,8 @@ function About() {
             <div className={styles.rightDiv}>
               <div className={styles.title}>Upload Excel</div>
               <div className={styles.content}>
-                I'm a frontend developer with experience in building responsive
-                and optimized sites
+                Easily upload your Excel spreadsheet containing recipient
+                information.
               </div>
             </div>
           </div>
@@ -112,8 +111,8 @@ function About() {
             <div className={styles.rightDiv}>
               <div className={styles.title}>View Excel</div>
               <div className={styles.content}>
-                I'm a frontend developer with experience in building responsive
-                and optimized sites
+                Effortlessly import data from the uploaded Excel file for
+                certificate generation.
               </div>
             </div>
           </div>
@@ -128,8 +127,8 @@ function About() {
             <div className={styles.rightDiv}>
               <div className={styles.title}>Download Certifiate</div>
               <div className={styles.content}>
-                I'm a frontend developer with experience in building responsive
-                and optimized sites
+                Instantly download the personalized certificate for each
+                recipient.
               </div>
             </div>
           </div>

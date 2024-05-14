@@ -4,13 +4,7 @@
   padding: 1rem 2rem;
   display: flex;
   flex-direction: column;
-  /* background: rgb(7,25,51);
-background: linear-gradient(90deg, rgba(7,25,51,1) 0%, rgba(18,42,84,1) 24%, rgba(4,21,45,1) 100%); */
-
-/* background: rgb(128,201,235);
-background: linear-gradient(90deg, rgba(128,201,235,1) 0%, rgba(171,253,255,1) 28%, rgba(255,255,242,1) 72%);  */
-
-/* background-image: linear-gradient(to right, #fa709a 0%, #fee140 100%); */
+  
 }
 
 
@@ -24,11 +18,12 @@ width: 100%;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  background-color: rgba(245, 245, 245, 0.467);
+  background-color: rgba(245, 245, 245, 0);
   padding: 0.2rem 0.1rem;
   border-radius: 50px;
-  box-shadow: 1px 1px 5px 0px #fff;
+  box-shadow: 1px 1px 1px 0px #eeeeeea3;
   /* width: 5rem; */
+
 }
 .selectTheme div{
   display: flex;
@@ -45,15 +40,18 @@ width: 100%;
 }
 
 .Container{
-  padding: 1rem 3rem;
+  padding: 0.3rem 1.2rem;
    
 }
 
 @media (max-width : 575px) {
   .App{
-    padding: 2rem 0.2rem;
+    padding: 0rem 0.4rem;
   }
   .Container{
-    padding: 1rem 0rem;
+    padding: 0.4rem 0rem;
+  }
+  .themeContainer{
+    display: none;
   }
 }

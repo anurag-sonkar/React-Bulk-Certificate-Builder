@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styles from "./Header.module.css";
 import { HashLink as Link } from "react-router-hash-link";
 import { HiMenu } from "react-icons/hi";
+
 function Header() {
   const [displayMenu, setDisplayMenu] = useState(false);
   const toggleDisplay = () => {

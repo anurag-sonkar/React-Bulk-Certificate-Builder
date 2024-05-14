@@ -16,7 +16,7 @@
   text-decoration: none;
   display: block;
   text-transform: capitalize;
-  font-size: 2.6rem;
+  font-size: 3.2rem;
   font-weight: 600;
   color: var(--color-text);
 
@@ -45,7 +45,7 @@
 }
 
 
-@media (max-width: 830px) {
+@media (max-width: 1000px) {
   
   .expandBar{
     display: block;
@@ -76,4 +76,26 @@
   .menu.show{
     display: block;
   }
+
+  
+}
+
+@media (max-width : 575px) {
+  .headerContainer{
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+ 
+  .title a{
+    font-size: 2rem;
+  }
+  .menu{
+  }
+}
+
+@media (max-width : 300px) {
+  .title a{
+    font-size: 1.8rem;
+  }
+  
 }

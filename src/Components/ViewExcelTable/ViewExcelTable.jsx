@@ -7,7 +7,9 @@ import Button from "react-bootstrap/Button";
 
 function ViewExcelTable() {
   const { excelData, setExcelData } = useExcelFile();
-  console.log("EXCEL_DATA : ", excelData);
+  // const keysOfTable = Object.keys(excelData[0]);
+  // console.log("EXCEL_KEYS : ", keysOfTable);
+
   // delete
   const deleteEntry = (id) => {
     const filteredData = excelData.filter((entry, index) => index !== id);

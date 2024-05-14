@@ -72,6 +72,35 @@ align-items: center;
   animation-timing-function: ease-in-out;
 }
 
+.downloadDiv{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+
+}
+
+.downloadDiv img{
+  width: 1.6rem;
+  margin: 0 0.2rem;
+
+}
+
+.downloadDiv button{
+  outline: none;
+  border: none;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  text-transform: capitalize;
+  font-weight: 500;
+  font-family: "roboto";
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgb(128,201,235);
+background: linear-gradient(90deg, rgba(128,201,235,1) 0%, rgba(171,253,255,1) 28%, rgba(255,255,242,1) 72%);
+}
+
 @keyframes floating {
   0% {
     transform: translate(0, 0px);

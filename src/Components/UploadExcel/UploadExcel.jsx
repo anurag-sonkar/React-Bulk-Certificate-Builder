@@ -36,6 +36,7 @@ function UploadExcel() {
       console.log(error);
     }
   }
+
   useEffect(() => {
     fetchAllImages();
   }, []);
@@ -114,10 +115,30 @@ function UploadExcel() {
     }
   };
 
+  const downloadExcel = async () => {
+    try {
+      const fileRef = ref(storage, "file/excelFile/Certificate-Data.xlsx");
+      const url = await getDownloadURL(fileRef);
+
+      // Create a temporary anchor element
+      const anchor = document.createElement("a");
+      anchor.href = url;
+      anchor.download = "Certificate-Data.xlsx"; // Set the filename for download
+      anchor.click(); // Simulate a click on the anchor element
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div className={styles.uploadExcelContainer} id="upload">
       <div className={styles.header}>
         <div className={styles.heading}>Upload Excel</div>
+        <div className={styles.downloadDiv}>
+          <button onClick={downloadExcel}>
+            Download <img src={excelImagesUrls[0]} />
+          </button>
+        </div>
         <div className={styles.link}>
           <Link
             to="#home"

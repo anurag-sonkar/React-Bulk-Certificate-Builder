@@ -45,7 +45,7 @@ const CertificateContextProvider = (props) => {
           },
           {
             position: "absolute",
-            top: "37%",
+            top: "36%",
             fontSize: "35px",
             // fontWeight: "600",
             width: "100%",

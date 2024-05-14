@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./Download.module.css";
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
@@ -7,12 +7,15 @@ import { MdArrowUpward } from "react-icons/md";
 import pdfImg from "../../assets/folder.png";
 import { useCertificate } from "../../ContextProvider/CertificateContext";
 import { useExcelFile } from "../../ContextProvider/ExcelFileContext";
+import LinearWithValueLabel from "./LinearWithValueLabel";
 function Download() {
   const { certificateToBeEdit, overlayCSS } = useCertificate();
   const { excelData, setExcelData } = useExcelFile();
+  const [loading, setLoading] = useState(false);
 
   // generate pdf
   const generatePDF = async () => {
+    setLoading(true);
     // const pdf = new jsPDF("landscape");
     const pdf = new jsPDF("landscape", "px", "a4"); // Adjust page size and format
 
@@ -49,9 +52,13 @@ function Download() {
 
     // Save the PDF
     pdf.save("certificates.pdf");
+    setTimeout(() => {
+      setLoading(false);
+    }, 2500);
   };
 
   const downloadSingleCertificate = async (index) => {
+    setLoading(true);
     const pdf = new jsPDF("landscape", "px", "a4"); // Adjust page size and format
     const certificates = document.querySelectorAll(
       `.${styles.certificateWrapper}`
@@ -72,8 +79,10 @@ function Download() {
         pdf.internal.pageSize.getHeight()
       );
 
-      // Save the PDF after adding the image of the selected certificate
       pdf.save("certificate.pdf");
+      setTimeout(() => {
+        setLoading(false);
+      }, 2500);
     } else {
       console.error("Certificate index out of range.");
     }
@@ -96,6 +105,9 @@ function Download() {
         >
           <MdArrowUpward />
         </Link>
+      </div>
+      <div style={{ color: "#fff" }}>
+        {loading ? <LinearWithValueLabel /> : ""}
       </div>
       <div className={styles.container}>
         {excelData ? (
