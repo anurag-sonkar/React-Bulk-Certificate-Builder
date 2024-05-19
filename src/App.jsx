@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./App.module.css";
 import Header from "./Components/Header/Header";
 import Hero from "./Components/Hero/Hero";
@@ -11,12 +11,16 @@ import ExcelContextProvider from "./ContextProvider/ExcelFileContext";
 import ViewExcelTable from "./Components/ViewExcelTable/ViewExcelTable";
 import Download from "./Components/Download/Download";
 import { useTheme } from "./ContextProvider/ThemeContext";
+/* */
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   const { themePlate, themeSelector, setThemeSelector } = useTheme();
-  // console.log("THEME : ", obj);
+
   return (
     <>
+      <ToastContainer />
       <div
         className={styles.App}
         style={{

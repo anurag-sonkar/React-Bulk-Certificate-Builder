@@ -29,7 +29,6 @@ const ThemeContextProvider = (props) => {
     },
   ];
   const [themeSelector, setThemeSelector] = useState(themePlate[0]);
-  console.log(themeSelector);
   return (
     <ThemeContext.Provider
       value={{ themePlate, themeSelector, setThemeSelector }}

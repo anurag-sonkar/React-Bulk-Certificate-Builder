@@ -8,10 +8,23 @@ import pdfImg from "../../assets/folder.png";
 import { useCertificate } from "../../ContextProvider/CertificateContext";
 import { useExcelFile } from "../../ContextProvider/ExcelFileContext";
 import LinearWithValueLabel from "./LinearWithValueLabel";
+
+/* */
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 function Download() {
   const { certificateToBeEdit, overlayCSS } = useCertificate();
   const { excelData, setExcelData } = useExcelFile();
   const [loading, setLoading] = useState(false);
+
+  const notifyDownlaodSuccess = () => {
+    toast.success("Pdf Downloaded Successfully");
+  };
+
+  const notifySinglePdfSuccess = (name) => {
+    toast.success(`${name} Certificate Downlaoaded `);
+  };
 
   // generate pdf
   const generatePDF = async () => {
@@ -55,9 +68,10 @@ function Download() {
     setTimeout(() => {
       setLoading(false);
     }, 2500);
+    notifyDownlaodSuccess();
   };
 
-  const downloadSingleCertificate = async (index) => {
+  const downloadSingleCertificate = async (index, name) => {
     setLoading(true);
     const pdf = new jsPDF("landscape", "px", "a4"); // Adjust page size and format
     const certificates = document.querySelectorAll(
@@ -83,6 +97,7 @@ function Download() {
       setTimeout(() => {
         setLoading(false);
       }, 2500);
+      notifySinglePdfSuccess(name);
     } else {
       console.error("Certificate index out of range.");
     }
@@ -116,7 +131,7 @@ function Download() {
               <div
                 className={styles.certificateWrapper}
                 key={index}
-                onClick={() => downloadSingleCertificate(index)}
+                onClick={() => downloadSingleCertificate(index, ele.Firstname)}
               >
                 <img src={certificateToBeEdit} alt="Certificate" />
                 <div className={styles.overlay} style={overlayCSS[0]}>

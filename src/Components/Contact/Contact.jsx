@@ -60,7 +60,7 @@ function Contact() {
         </div>
         <div className={styles.rightContainer}>
           {contact.map((data, index) => (
-            <div className={styles.contact}>
+            <div className={styles.contact} key={index}>
               <img src={data.imgSrc} />
               <div>{data.linkSrc}</div>
             </div>

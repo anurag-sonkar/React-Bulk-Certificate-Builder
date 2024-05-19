@@ -13,6 +13,10 @@ import { useExcelFile } from "../../ContextProvider/ExcelFileContext";
 /*** excel  */
 import * as XLSX from "xlsx";
 
+/* */
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 function UploadExcel() {
   const [excelImagesUrls, setExcelImagesUrls] = useState([]);
   const [id, setId] = useState(0);
@@ -20,6 +24,18 @@ function UploadExcel() {
   const [typeError, setTypeError] = useState(null);
   const [excelFile, setExcelFile] = useState(null);
   const { excelData, setExcelData } = useExcelFile();
+
+  const [notifyText, setNotifyText] = useState(
+    "Welcome to certificate Generator"
+  );
+
+  const notify = () => {
+    toast.success(notifyText);
+  };
+
+  useEffect(() => {
+    notify();
+  }, [notifyText]);
 
   async function fetchAllImages() {
     try {
@@ -85,6 +101,7 @@ function UploadExcel() {
       const worksheet = workbook.Sheets[worksheetName];
       const data = XLSX.utils.sheet_to_json(worksheet);
       setExcelData(data.slice(0, 10));
+      setNotifyText("Excel Uploaded Successfully");
     }
   };
 
@@ -111,6 +128,8 @@ function UploadExcel() {
         return { ...txt, text: updatedText };
       });
       setExcelData(filteredData);
+      setNotifyText("Data Applied Successfully");
+
       // console.log(filteredData);
     }
   };
@@ -125,6 +144,7 @@ function UploadExcel() {
       anchor.href = url;
       anchor.download = "Certificate-Data.xlsx"; // Set the filename for download
       anchor.click(); // Simulate a click on the anchor element
+      setNotifyText("Excel Downloaded Successfully");
     } catch (error) {
       console.log(error);
     }

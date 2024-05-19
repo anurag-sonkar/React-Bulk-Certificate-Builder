@@ -72,6 +72,12 @@ table td,th,tr{
 
 }
 
+/* .noDataDiv div{
+  background-image: url("../../assets/icons8-folder-64.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+} */
+
 @media (max-width : 600px) {
 .viewExcelTableContainer {
   min-height: 50vh;

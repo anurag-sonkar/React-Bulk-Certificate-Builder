@@ -5,11 +5,18 @@ import { MdArrowUpward } from "react-icons/md";
 import { useCertificate } from "../../ContextProvider/CertificateContext";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+/* */
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function SelectCertificate() {
   const [id, setId] = useState(0);
   const { displayCertificates, selectedCertificate, setSelectedCertificate } =
     useCertificate();
+
+  const notify = () => {
+    toast("Template Selected Successfully");
+  };
 
   // console.log("OBJ", selectedCertificate);
 
@@ -52,6 +59,7 @@ function SelectCertificate() {
                 className={`${id === index ? "show" : styles.hide}`}
                 onClick={() => {
                   setSelectedCertificate(certificate);
+                  notify();
                 }}
               />
             ))}

@@ -11,6 +11,8 @@ import Certificate4a from "../assets/CertificatesImages/Certificate4(a).png";
 import Certificate4b from "../assets/CertificatesImages/Certificate4(b).png";
 import Certificate5a from "../assets/CertificatesImages/Certificate5(a).png";
 import Certificate5b from "../assets/CertificatesImages/Certificate5(b).png";
+import Certificate6a from "../assets/CertificatesImages/Certificate6(a).png";
+import Certificate6b from "../assets/CertificatesImages/Certificate6(b).png";
 
 export const CertificateContext = createContext();
 
@@ -24,6 +26,7 @@ const CertificateContextProvider = (props) => {
     Certificate3a,
     Certificate4a,
     Certificate5a,
+    Certificate6a,
   ]);
 
   const [selectedCertificate, setSelectedCertificate] = useState(Certificate0a);
@@ -359,6 +362,63 @@ const CertificateContextProvider = (props) => {
             left: "36%",
             fontSize: "10px",
             fontWeight: "400",
+            fontFamily: "Verdana",
+          },
+          {
+            sign: false,
+            position: "absolute",
+            top: "77%",
+            left: "58%",
+            fontSize: "10px",
+            fontWeight: "400",
+            fontFamily: "Verdana",
+          },
+        ]);
+        break;
+      }
+
+      /** 6th */
+      case Certificate6a: {
+        setCertificateToBeEdit(Certificate6b);
+        setOverlayCSS([
+          {
+            position: "absolute",
+            top: "0",
+            left: "0px",
+            width: "100%",
+            height: "100%",
+            color: "#fff",
+          },
+          {
+            position: "absolute",
+            top: "37%",
+            fontSize: "30px",
+            color: "#FFDE59",
+            fontWeight: "600",
+            width: "100%",
+            textAlign: "center",
+            fontFamily: "roboto",
+          },
+          {
+            position: "absolute",
+            top: "58%",
+            left: "24%",
+            width: "55%",
+            fontSize: "10px",
+            lineHeight: "10px",
+            display: "table",
+            margin: "auto",
+            textAlign: "center",
+            textAlignLast: "center",
+            fontFamily: "Verdana",
+          },
+          {
+            sign: true,
+            position: "absolute",
+            top: "85%",
+            left: "43%",
+            fontSize: "10px",
+            fontWeight: "500",
             fontFamily: "Verdana",
           },
           {

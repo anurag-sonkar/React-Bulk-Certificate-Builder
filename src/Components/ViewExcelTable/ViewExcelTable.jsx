@@ -4,6 +4,9 @@ import { HashLink as Link } from "react-router-hash-link";
 import { MdArrowUpward } from "react-icons/md";
 import { useExcelFile } from "../../ContextProvider/ExcelFileContext";
 import Button from "react-bootstrap/Button";
+/* */
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function ViewExcelTable() {
   const { excelData, setExcelData } = useExcelFile();
@@ -14,6 +17,10 @@ function ViewExcelTable() {
   const deleteEntry = (id) => {
     const filteredData = excelData.filter((entry, index) => index !== id);
     setExcelData(filteredData);
+  };
+
+  const notify = (id) => {
+    toast.error(`Index : ${id} Entry Deleted `);
   };
   return (
     <div className={styles.viewExcelTableContainer} id="view_imports">
@@ -58,6 +65,7 @@ function ViewExcelTable() {
                   <td
                     onClick={() => {
                       deleteEntry(index);
+                      notify(data.Id);
                     }}
                   >
                     <Button variant="outline-danger">Delete</Button>
