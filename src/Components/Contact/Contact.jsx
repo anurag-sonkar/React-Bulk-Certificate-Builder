@@ -11,15 +11,18 @@ function Contact() {
   const contact = [
     {
       imgSrc: contactUrls[0],
-      linkSrc: "myemail025@gmail.com",
+      linkSrc: "mailto:varunyadav191101@gmail.com",
+      displayText: "varunyadav191101@gmail.com"
     },
     {
       imgSrc: contactUrls[1],
-      linkSrc: "linkedin.com/myname",
+      linkSrc: "https://www.linkedin.com/in/varun-yadav-25ab90302?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app ",
+      displayText: "LinkedIn"
     },
     {
       imgSrc: contactUrls[2],
-      linkSrc: "github.com/myname",
+      linkSrc: "https://github.com/varun191101",
+      displayText: "GitHub"
     },
   ];
   async function fetchAllImages() {
@@ -62,7 +65,9 @@ function Contact() {
           {contact.map((data, index) => (
             <div className={styles.contact} key={index}>
               <img src={data.imgSrc} />
-              <div>{data.linkSrc}</div>
+              <div><a href={data.linkSrc} target="_blank">
+                  {data.displayText}
+                </a></div>
             </div>
           ))}
         </div>

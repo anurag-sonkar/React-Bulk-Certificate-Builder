@@ -85,23 +85,24 @@ line-height: 3.2rem;
     justify-content: center;
     align-items: center;
     flex-direction: column-reverse;
+    padding: 0;
     gap: 1rem;
   }
   .leftContainer{
     z-index: 10;
+    display: flex;
+    gap: 2rem;
   }
-  
   .leftContainer .name{
-    text-align: center;
-   
-    }
-
+    line-height: normal;
+  }
   .btn{
+    margin: 1.8rem 0;
     text-align: center;
   }
   .leftContainer .content{
     font-size: 1.8rem;
-    padding: 1rem;
+    margin: 0.5rem 0;
 
     }
 

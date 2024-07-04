@@ -1,19 +1,25 @@
-*{
-  margin: 0;padding: 0;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.container{
+.container {
   width: 100%;
-  background: rgb(0,6,17);
-  background: linear-gradient(90deg, rgba(0,6,17,1) 0%, rgba(4,21,45,0.9557948179271709) 100%);
+  background: rgb(0, 6, 17);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 6, 17, 1) 0%,
+    rgba(4, 21, 45, 0.9557948179271709) 100%
+  );
   padding: 1.5rem;
 }
 
-.header{
+.header {
   float: right;
 }
 
-.header a{
+.header a {
   text-decoration: none;
   display: block;
   font-size: 3rem;
@@ -28,75 +34,140 @@
   transition: all 0.3s ease-in-out;
 }
 
-.header a:hover{
+.header a:hover {
   background-color: rgb(0, 0, 0);
   scale: 1.2;
 }
 
-.contactContainer{
+.contactContainer {
   display: flex;
-  justify-content: space-evenly;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
-  /* background-color: antiquewhite; */
-  padding: 5rem;
+  /* gap: 2rem; */
+  align-items: center;
+  padding: 5rem 1rem;
 }
 
-.leftContainer{
-
+.leftContainer {
+  flex: 1;
+  min-width: 300px;
+  margin-bottom: 2rem;
+  text-align: center;
 }
 
-.leftContainer div:nth-child(1){
-font-size: 5rem;
-font-family: "roboto";
-color: #fff;
-font-weight:500 ;
-
-}
-
-.leftContainer div:nth-child(2){
-  font-size: 2.5rem;
-  font-family: "roboto";
+.leftContainer div:nth-child(1) {
+  font-size: 3.8rem;
+  font-family: "Roboto", sans-serif;
   color: #fff;
-  font-weight:500 ;
-}
-.rightContainer{
-
-
+  font-weight: 500;
 }
 
-.contact{
+.leftContainer div:nth-child(2) {
+  font-size: 2.8rem;
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+  font-weight: 500;
+}
+
+.rightContainer {
+  flex: 1;
+  min-width: 300px;
+}
+
+.contact {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
+  /* justify-content: space-between; */
+  gap: 1rem;
   color: #fff;
   margin: 1rem 0;
 }
-.contact div{
-  font-size: 1.5rem;
-  font-family: "roboto";
-  color: #fff;
-  font-weight:500 ;
+
+.contact img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
 }
 
-@media (max-width : 830px) {
-  .contactContainer{
+.contact div {
+  font-size: 1.5rem;
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+  font-weight: 500;
+}
+
+.contact div a {
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  word-break: break-word;
+}
+
+@media (max-width: 1024px) {
+  .leftContainer div:nth-child(1) {
+    font-size: 4rem;
+  }
+
+  .leftContainer div:nth-child(2) {
+    font-size: 2.2rem;
+  }
+
+  .contact img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .contact div {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .contactContainer {
+    padding: 3rem 1rem;
     flex-direction: column;
   }
 
-  .leftContainer div:nth-child(1)
-  {
-    text-align: center;
+  .leftContainer div:nth-child(1) {
+    font-size: 3.5rem;
   }
 
-  .leftContainer div:nth-child(2)
-  {
-    text-align: center;
+  .leftContainer div:nth-child(2) {
+    font-size: 2rem;
   }
 
-  .contact{
-    gap: 0;
+  .contact img {
+    width: 40px;
+    height: 40px;
   }
-  .contactContainer{
+
+  .contact div {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header a {
+    font-size: 2.5rem;
+    width: 30px;
+    height: 30px;
+  }
+
+  .leftContainer div:nth-child(1) {
+    font-size: 3rem;
+  }
+
+  .leftContainer div:nth-child(2) {
+    font-size: 1.8rem;
+  }
+
+  .contact img {
+    width: 35px;
+    height: 35px;
+  }
+
+  .contact div {
+    font-size: 1.1rem;
   }
 }
