@@ -22,6 +22,8 @@ import img2 from "../../assets/images/excel (1).png"
 import img3 from "../../assets/images/file (1).png"
 import img4 from "../../assets/images/upload.png"
 
+import excel from "../../assets/Excel-file/Certificate-Data.xlsx"
+
 function UploadExcel() {
   const [excelImagesUrls, setExcelImagesUrls] = useState([img1,img2,img3,img4]);
   const [id, setId] = useState(0);
@@ -139,11 +141,26 @@ function UploadExcel() {
     }
   };
 
-  const downloadExcel = async () => {
-    try {
-      const fileRef = ref(storage, "file/excelFile/Certificate-Data.xlsx");
-      const url = await getDownloadURL(fileRef);
+  // const downloadExcel = async () => {
+  //   try {
+  //     const fileRef = ref(storage, "file/excelFile/Certificate-Data.xlsx");
+  //     const url = await getDownloadURL(fileRef);
 
+  //     // Create a temporary anchor element
+  //     const anchor = document.createElement("a");
+  //     anchor.href = url;
+  //     anchor.download = "Certificate-Data.xlsx"; // Set the filename for download
+  //     anchor.click(); // Simulate a click on the anchor element
+  //     setNotifyText("Excel Downloaded Successfully");
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
+
+  const downloadExcel = () => {
+    try {
+      const url = excel
+  
       // Create a temporary anchor element
       const anchor = document.createElement("a");
       anchor.href = url;
@@ -154,6 +171,7 @@ function UploadExcel() {
       console.log(error);
     }
   };
+  
 
   return (
     <div className={styles.uploadExcelContainer} id="upload">
