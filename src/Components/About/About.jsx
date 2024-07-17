@@ -5,47 +5,54 @@ import { MdArrowUpward } from "react-icons/md";
 
 import { getDownloadURL, listAll, ref } from "firebase/storage";
 import { storage } from "../../firebaseConfig";
+import userImage from "../../assets/images/cartoon.png"
+
+import selectCertificate from "../../assets/images/selectCertificate.png"
+import uploadExcel from "../../assets/images/uploadExcel.png"
+import viewExcelData from "../../assets/images/viewExcelData.png"
+import downloadPdf from "../../assets/images/downloadPdf.png"
+// , uploadExcel , viewExcelData,downloadPdf
 import GradientCircularProgress from "./GradientCircularProgress";
 function About() {
   const [rightDivImagesUrls, setRightDivImagesUrls] = useState([]);
   const [leftDivImageUrl, setLeftDivImageUrl] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const fetchUserImage = async () => {
-    try {
-      const imageRef = ref(
-        storage,
-        "rootImages/AboutImages/LeftDiv/cartoon.png"
-      );
-      const url = await getDownloadURL(imageRef);
-      setLeftDivImageUrl(url);
-      // console.log("LEFT", leftDivImageUrl);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  // const fetchUserImage = async () => {
+  //   try {
+  //     const imageRef = ref(
+  //       storage,
+  //       "rootImages/AboutImages/LeftDiv/cartoon.png"
+  //     );
+  //     const url = await getDownloadURL(imageRef);
+  //     setLeftDivImageUrl(url);
+  //     // console.log("LEFT", leftDivImageUrl);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
-  async function fetchAllImages() {
-    try {
-      const imagesRefs = ref(storage, "rootImages/AboutImages/RightDiv");
-      const imageList = await listAll(imagesRefs);
+  // async function fetchAllImages() {
+  //   try {
+  //     const imagesRefs = ref(storage, "rootImages/AboutImages/RightDiv");
+  //     const imageList = await listAll(imagesRefs);
 
-      const allUrls = imageList.items.map(async (imageRef) => {
-        const url = await getDownloadURL(imageRef);
-        return url;
-      });
-      const urls = await Promise.all(allUrls);
-      setRightDivImagesUrls(urls);
-      setLoading(false);
-    } catch (error) {
-      console.log(error);
-    }
-  }
-  useEffect(() => {
-    setLoading(true);
-    fetchUserImage();
-    fetchAllImages();
-  }, []);
+  //     const allUrls = imageList.items.map(async (imageRef) => {
+  //       const url = await getDownloadURL(imageRef);
+  //       return url;
+  //     });
+  //     const urls = await Promise.all(allUrls);
+  //     setRightDivImagesUrls(urls);
+  //     setLoading(false);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // }
+  // useEffect(() => {
+  //   setLoading(true);
+  //   fetchUserImage();
+  //   fetchAllImages();
+  // }, []);
 
   return (
     <div className={styles.aboutContainer} id="about">
@@ -65,7 +72,7 @@ function About() {
           {loading ? (
             <GradientCircularProgress />
           ) : (
-            <img src={leftDivImageUrl} />
+            <img src={userImage} />
           )}
         </div>
         <div className="rightContainer">
@@ -74,7 +81,7 @@ function About() {
               {loading ? (
                 <GradientCircularProgress />
               ) : (
-                <img src={rightDivImagesUrls[1]} />
+                <img src={selectCertificate} />
               )}
             </div>
             <div className={styles.rightDiv}>
@@ -89,7 +96,7 @@ function About() {
               {loading ? (
                 <GradientCircularProgress />
               ) : (
-                <img src={rightDivImagesUrls[2]} />
+                <img src={uploadExcel} />
               )}
             </div>
             <div className={styles.rightDiv}>
@@ -105,7 +112,7 @@ function About() {
               {loading ? (
                 <GradientCircularProgress />
               ) : (
-                <img src={rightDivImagesUrls[3]} />
+                <img src={viewExcelData} />
               )}
             </div>
             <div className={styles.rightDiv}>
@@ -121,7 +128,7 @@ function About() {
               {loading ? (
                 <GradientCircularProgress />
               ) : (
-                <img src={rightDivImagesUrls[0]} />
+                <img src={downloadPdf} />
               )}
             </div>
             <div className={styles.rightDiv}>

@@ -4,45 +4,48 @@ import { HashLink as Link } from "react-router-hash-link";
 import { MdArrowUpward } from "react-icons/md";
 import { getDownloadURL, listAll, ref } from "firebase/storage";
 import { storage } from "../../firebaseConfig";
+import github from "../../assets/images/image 14.png"
+import email from "../../assets/images/image 12.png"
+import linkedin from "../../assets/images/image 13.png"
 
 function Contact() {
-  const [contactUrls, setContactUrls] = useState([]);
+  // const [contactUrls, setContactUrls] = useState([]);
   // console.log("ContactUrls : ", contactUrls);
   const contact = [
     {
-      imgSrc: contactUrls[0],
-      linkSrc: "mailto:varunyadav191101@gmail.com",
-      displayText: "varunyadav191101@gmail.com"
+      imgSrc: email,
+      linkSrc: "mailto:anuragsonkar053@gmail.com",
+      displayText: "anuragsonkar053@gmail.com"
     },
     {
-      imgSrc: contactUrls[1],
-      linkSrc: "https://www.linkedin.com/in/varun-yadav-25ab90302?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app ",
-      displayText: "LinkedIn"
+      imgSrc: linkedin,
+      linkSrc: "https://www.linkedin.com/in/anurag-sonkar-27bb2419b/",
+      displayText: "https://www.linkedin.com/in/anurag-sonkar-27bb2419b/"
     },
     {
-      imgSrc: contactUrls[2],
-      linkSrc: "https://github.com/varun191101",
-      displayText: "GitHub"
+      imgSrc: github,
+      linkSrc: "https://github.com/anurag-sonkar",
+      displayText: "https://github.com/anurag-sonkar"
     },
   ];
-  async function fetchAllImages() {
-    try {
-      const imagesRefs = ref(storage, "rootImages/ContactImages");
-      const imageList = await listAll(imagesRefs);
+  // async function fetchAllImages() {
+  //   try {
+  //     const imagesRefs = ref(storage, "rootImages/ContactImages");
+  //     const imageList = await listAll(imagesRefs);
 
-      const allUrls = imageList.items.map(async (imageRef) => {
-        const url = await getDownloadURL(imageRef);
-        return url;
-      });
-      const urls = await Promise.all(allUrls);
-      setContactUrls(urls);
-    } catch (error) {
-      console.log(error);
-    }
-  }
-  useEffect(() => {
-    fetchAllImages();
-  }, []);
+  //     const allUrls = imageList.items.map(async (imageRef) => {
+  //       const url = await getDownloadURL(imageRef);
+  //       return url;
+  //     });
+  //     const urls = await Promise.all(allUrls);
+  //     setContactUrls(urls);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // }
+  // useEffect(() => {
+  //   fetchAllImages();
+  // }, []);
   return (
     <div className={styles.container} id="contact">
       <div className={styles.header}>

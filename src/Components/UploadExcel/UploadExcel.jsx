@@ -17,8 +17,13 @@ import * as XLSX from "xlsx";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+import img1 from "../../assets/images/excel.png"
+import img2 from "../../assets/images/excel (1).png"
+import img3 from "../../assets/images/file (1).png"
+import img4 from "../../assets/images/upload.png"
+
 function UploadExcel() {
-  const [excelImagesUrls, setExcelImagesUrls] = useState([]);
+  const [excelImagesUrls, setExcelImagesUrls] = useState([img1,img2,img3,img4]);
   const [id, setId] = useState(0);
   /** */
   const [typeError, setTypeError] = useState(null);
@@ -37,25 +42,25 @@ function UploadExcel() {
     notify();
   }, [notifyText]);
 
-  async function fetchAllImages() {
-    try {
-      const imagesRefs = ref(storage, "rootImages/uploadExcelImages");
-      const imageList = await listAll(imagesRefs);
+  // async function fetchAllImages() {
+  //   try {
+  //     const imagesRefs = ref(storage, "rootImages/uploadExcelImages");
+  //     const imageList = await listAll(imagesRefs);
 
-      const allUrls = imageList.items.map(async (imageRef) => {
-        const url = await getDownloadURL(imageRef);
-        return url;
-      });
-      const urls = await Promise.all(allUrls);
-      setExcelImagesUrls(urls);
-    } catch (error) {
-      console.log(error);
-    }
-  }
+  //     const allUrls = imageList.items.map(async (imageRef) => {
+  //       const url = await getDownloadURL(imageRef);
+  //       return url;
+  //     });
+  //     const urls = await Promise.all(allUrls);
+  //     setExcelImagesUrls(urls);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // }
 
-  useEffect(() => {
-    fetchAllImages();
-  }, []);
+  // useEffect(() => {
+  //   fetchAllImages();
+  // }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {

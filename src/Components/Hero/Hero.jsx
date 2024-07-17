@@ -4,24 +4,25 @@ import { HashLink as Link } from "react-router-hash-link";
 import { getDownloadURL, ref } from "firebase/storage";
 import { storage } from "../../firebaseConfig";
 import Loading from "./Loading";
+import userImage from "../../assets/images/user.png"
 
 function Hero() {
-  const [userImageUrl, setUserImageUrl] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const fetchUserImage = async () => {
-    try {
-      const imageRef = ref(storage, "rootImages/UserImages/user.png");
-      const url = await getDownloadURL(imageRef);
-      setUserImageUrl(url);
-      setLoading(false);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  // const [userImageUrl, setUserImageUrl] = useState(null);
+  // const [loading, setLoading] = useState(true);
+  // const fetchUserImage = async () => {
+  //   try {
+  //     const imageRef = ref(storage, "rootImages/UserImages/user.png");
+  //     const url = await getDownloadURL(imageRef);
+  //     setUserImageUrl(url);
+  //     setLoading(false);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
-  useEffect(() => {
-    fetchUserImage();
-  }, []);
+  // useEffect(() => {
+  //   fetchUserImage();
+  // }, []);
   return (
     <div className={styles.container} id="home">
       <div className={styles.leftContainer}>
@@ -44,7 +45,9 @@ function Hero() {
         </div>
       </div>
       <div className={styles.rightContainer}>
-        {loading ? <Loading /> : <img src={userImageUrl} />}
+      {/* {userImage && <img src={userImage} />} */}
+      {userImage ? <img src={userImage} /> : <Loading/>}
+        {/* {loading ? <Loading /> : <img src={userImage} />} */}
       </div>
     </div>
   );
